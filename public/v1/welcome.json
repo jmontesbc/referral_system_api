@@ -1,20 +1,28 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "https://pure-caverns-73223.herokuapp.com",
+  "basePath": "http://127.0.0.1:3005",
   "resourcePath": "welcome",
   "apis": [
     {
       "path": "/v1/greetings",
       "operations": [
         {
-          "summary": "Fetches all User items",
-          "notes": "This lists all the active users",
+          "summary": "This is a Summary of a GET Action",
+          "notes": "You can add some notes",
+          "parameters": [
+
+          ],
           "responseMessages": [
             {
               "code": 200,
               "responseModel": null,
               "message": "Success"
+            },
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "This is a bad request"
             },
             {
               "code": 401,
@@ -36,13 +44,70 @@
       "path": "/v1/greetings/{id}",
       "operations": [
         {
-          "summary": "Creates all User items",
-          "notes": "Creates an active users",
+          "summary": "This is a Summary of a POST Action",
+          "notes": "You can add some notes",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Path Param",
+              "required": false
+            },
+            {
+              "paramType": "body",
+              "name": "body",
+              "type": "string",
+              "description": "Body Param",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "last_name",
+              "type": "string",
+              "description": "Form Param",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "email",
+              "type": "string",
+              "description": "Form Param",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "role",
+              "type": "string",
+              "description": "Param List",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "admin",
+                  "superadmin",
+                  "user"
+                ]
+              }
+            },
+            {
+              "paramType": "header",
+              "name": "Content-Type",
+              "type": "string",
+              "description": "Content Type",
+              "required": true
+            }
+          ],
           "responseMessages": [
             {
               "code": 200,
               "responseModel": null,
               "message": "Success"
+            },
+            {
+              "code": 400,
+              "responseModel": null,
+              "message": "This is a bad request"
             },
             {
               "code": 401,
